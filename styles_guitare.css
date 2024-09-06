@@ -1,187 +1,127 @@
-/*Le fond de la page*/
+/* Le fond de la page */
 html,
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh; /* Utiliser vh pour la hauteur totale de l'écran */
     margin: 0;
     background-color: #e43c82;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
-/*Le manche*/
+/* Le manche */
 .manche {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95vw;
-    height: 200px;
+    width: 80vw; /* Largeur relative à l'écran */
+    height: 15vh; /* Hauteur relative à l'écran */
     background-color: #abffca;
-    border-radius: 20px;
-    bottom: -35%;
+    border-radius: 2vw; /* Bordures arrondies en unités relatives */
+    position: relative;
 }
 
-/*Les frettes*/
+/* Les frettes */
 .frettes {
-    position: relative;
     width: 90%;
     height: 100%;
-    margin: 0 5%;
+    margin: 0 auto; /* Centre les frettes dans le manche */
 }
 
-/*Une frette*/
+/* Une frette */
 .frette {
-    width: 4px;
+    width: 0.5vw; /* Taille relative à l'écran */
     height: 100%;
     background-color: #ffe600;
     position: absolute;
     top: 0;
     transform: translateX(-50%);
-    z-index: 1;
 }
 
-/*les voyants des cordes*/
+/* Les voyants des cordes */
 .voyant {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 2vw; /* Taille relative */
+    height: 2vw; /* Taille relative */
     border-radius: 50%;
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 0.2vw solid #fff; /* Bordure relative */
     transition: background-color 0.3s;
     position: absolute;
     transform: translate(-50%, -50%);
-    z-index: 10;
-    cursor: pointer;
-    pointer-events: auto;
 }
 
-/*Un voyants d'une cordes en "OFF" */
-.voyant.off {
-    display: none;
-}
-
-/*Un voyants d'une cordes en "STANDBY" */
-.voyant.standby {
-    background-color: red;
-    opacity: 40%;
-}
-
-/*Un voyants d'une cordes en "ON" */
-.voyant.on {
-    background-color: green;
-}
-
-/*Les cordes*/
+/* Les cordes */
 .cordes {
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     width: 90%;
     height: 80%;
-    margin: 0 5%;
-    z-index: 9;
-    pointer-events: none;
+    margin: 0 auto; /* Centre les cordes dans le manche */
 }
 
-/*Une corde*/
+/* Une corde */
 .corde {
-    height: 3px;
-    width: 106%;
+    height: 0.2vw; /* Taille relative */
+    width: 100%;
     background-color: black;
-    position: relative;
 }
 
-/*Zone de texte pour l'indication de la note de chaque corde*/
+/* Zone de texte pour l'indication de la note de chaque corde */
 .corde span {
     position: absolute;
-    left: -25px;
-    top: -7px;
-    border-radius: 7px;
+    left: -2vw; /* Taille relative */
+    top: -1.5vw; /* Taille relative */
+    border-radius: 0.7vw; /* Taille relative */
     color: black;
     background-color: #ffe600;
-    font-size: 15px;
-    width: 16px;
+    font-size: 1.5vw; /* Taille de police relative */
+    width: 2vw; /* Taille relative */
     text-align: center;
 }
 
-/*tableau des Intervalles et et Notes*/
+/* Tableau des Intervalles et Notes */
 table {
-    font-size: 15px;
+    font-size: 1.5vw; /* Taille de texte relative */
     border-collapse: collapse;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 80vw; /* Largeur relative */
+    max-width: 600px; /* Largeur maximale */
     background-color: #8d8f9d;
-    z-index: 4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 0.8vw; /* Bordures arrondies en unités relatives */
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3); /* Ombre relative */
 }
 
-/*Entete du tableau des Intervalles et et Notes*/
+/* En-tête du tableau des Intervalles et Notes */
 caption {
-    font-size: 20px;
+    font-size: 2vw; /* Taille de texte relative */
     background-color: #8d8f9d;
     color: black;
-    border: 3px solid #ffe600;
+    border: 0.3vw solid #ffe600; /* Bordure relative */
     text-align: center;
-    z-index: 5;
-    border-radius: 8px 8px 0 0;
-    padding: 10px;
+    border-radius: 0.8vw 0.8vw 0 0; /* Bordures arrondies en unités relatives */
+    padding: 1vw; /* Padding relatif */
 }
 
-/*interieur des cellules du tableau des Intervalles et et Notes*/
+/* Intérieur des cellules du tableau des Intervalles et Notes */
 th,
 td {
-    border: 3px solid #ffe600;
-    padding: 0 16px;
+    border: 0.3vw solid #ffe600; /* Bordure relative */
+    padding: 0.8vw; /* Padding relatif */
     text-align: center;
-    z-index: 5;
 }
 
-/*menu deroulant*/
+/* Menu déroulant */
 #scale-selector {
     position: fixed;
-    top: 5%;
+    top: 5vh; /* Position verticale relative */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 5;
     background-color: #8d8f9d;
-    border: 2px solid #ffe600;
-    padding: 5px;
-    font-size: 16px;
+    border: 0.2vw solid #ffe600; /* Bordure relative */
+    padding: 0.5vw; /* Padding relatif */
+    font-size: 1.5vw; /* Taille de texte relative */
     color: black;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 0.8vw; /* Bordures arrondies en unités relatives */
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3); /* Ombre relative */
 }
 
-/* Media Queries */
-@media (max-width: 200px) {
-
-    /* Le manche */
-    .manche {
-        width: 90vw;
-        height: 150px;
-        bottom: -25%;
-    }
-
-    /* Tableau des Intervalles et Notes */
-    table {
-        font-size: 12px;
-        top: 5%;
-    }
-
-    /* Menu déroulant */
-    #scale-selector {
-        font-size: 14px;
-        padding: 3px;
-    }
-}
