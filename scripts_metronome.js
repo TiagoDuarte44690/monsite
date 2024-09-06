@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const minusButton = document.querySelector('.btn-Moins');
     const playButton = document.querySelector('.btn-Play');
     const cercleCentral = document.querySelector('.cercle-central');
-    const metronomeSound = document.getElementById('metronome-sound'); // Ajout de la référence audio
+    const metronomeSound = document.getElementById('metronome-sound'); // Ajout de la rÃ©fÃ©rence audio
 
     let isPlaying = false;
     let metronomeInterval;
@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function Son(bpm) {
         if (bpm === 0) {
-            // Arrêter le métronome et le son si le BPM est 0
+            // ArrÃªter le mÃ©tronome et le son si le BPM est 0
             if (metronomeInterval) {
                 clearInterval(metronomeInterval);
                 metronomeInterval = null;
             }
             metronomeSound.pause();
-            metronomeSound.currentTime = 0; // Rewind le son à 0
+            metronomeSound.currentTime = 0; // Rewind le son Ã  0
             return;
         }
         
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(metronomeInterval);
             }
             metronomeInterval = setInterval(() => {
-                metronomeSound.currentTime = 0; // Rewind le son à chaque lecture
+                metronomeSound.currentTime = 0; // Rewind le son Ã  chaque lecture
                 metronomeSound.play(); // Joue le son
             }, interval);
         } else {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(metronomeInterval);
                 metronomeInterval = null;
             }
-            metronomeSound.pause(); // Arrête le son
+            metronomeSound.pause(); // ArrÃªte le son
         }
     }
 
@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (direction === 'moins' && angleDeg > 0) {
             bpmDisplayValue -= incrementStep;
         }
-        bpmDisplayValue = Math.max(0, bpmDisplayValue); // Assure que BPM ne soit pas négatif
+        bpmDisplayValue = Math.max(0, bpmDisplayValue); // Assure que BPM ne soit pas nÃ©gatif
         bpmValue.textContent = `${bpmDisplayValue} bpm`;
         updateAiguille('bpm');
-        Son(bpmDisplayValue); // Met à jour la fréquence du son lorsque les BPM changent
+        Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son lorsque les BPM changent
     }
 
     function updateAiguille(updateType, event) {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         aiguille.style.transform = `rotate(${angleDeg + 220}deg)`;
         bpmValue.textContent = `${bpmDisplayValue} bpm`;
-        Son(bpmDisplayValue); // Met à jour la fréquence du son lorsque les BPM changent
+        Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son lorsque les BPM changent
     }
 
     updateAiguille('bpm');
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case playButton:
                 isPlaying = !isPlaying;
                 playButton.textContent = isPlaying ? 'Stop' : 'Play';
-                Son(bpmDisplayValue); // Met à jour la fréquence du son en fonction de l'état de lecture
+                Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son en fonction de l'Ã©tat de lecture
                 break;
             default:
                 if (cadran.contains(event.target) && !cercleCentral.contains(event.target)) {

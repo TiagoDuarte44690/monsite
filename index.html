@@ -19,12 +19,7 @@
 
     <table>
         <caption>Intervalles et Notes</caption>
-        <thead>
-            <tr>
-                <th>Intervalles</th>
-                <th>Notes</th>
-            </tr>
-        </thead>
+        <thead></thead>
         <tbody>
             <tr id="intervals-row"></tr>
             <tr id="notes-row"></tr>
@@ -57,20 +52,22 @@
         </div>
         <div class="button-Style">
             <div class="button-Plus_Moins">
-                <button class="btn btn-Moins" onmousedown="startChangingBpm(-1)" onmouseup="stopChangingBpm()"
-                    onmouseleave="stopChangingBpm()">-</button>
-                <button class="btn btn-Plus" onmousedown="startChangingBpm(1)" onmouseup="stopChangingBpm()"
-                    onmouseleave="stopChangingBpm()">+</button>
+                <button class="btn btn-Moins" 
+                        onmousedown="startChangingBpm(-1)" 
+                        onmouseup="stopChangingBpm()" 
+                        onmouseleave="stopChangingBpm()">-</button>
+                <button class="btn btn-Plus" 
+                        onmousedown="startChangingBpm(1)" 
+                        onmouseup="stopChangingBpm()" 
+                        onmouseleave="stopChangingBpm()">+</button>
             </div>
             <div class="button-Play">
                 <button class="btn btn-Play" onclick="toggleMetronome()">Play</button>
             </div>
         </div>
 
-        <body>
-            <audio id="metronome-sound" src="son/Metronome234.mp3"></audio>
+        <audio id="metronome-sound" src="C:/xampp/htdocs/PHP/son/1489.mp3" preload="auto"></audio>
     </div>
-
     <script src="./scripts_guitare.js"></script>
     <script src="./scripts_metronome.js"></script>
 </body>
