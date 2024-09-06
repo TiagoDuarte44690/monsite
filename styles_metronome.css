@@ -1,96 +1,157 @@
 /* Styles pour le métronome */
 .Metronome {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25vw; /* Largeur relative */
-    height: 25vw; /* Hauteur relative */
-    max-width: 300px; /* Largeur maximale */
-    max-height: 300px; /* Hauteur maximale */
-    position: relative;
+    width: 250px;
+    height: 250px;
+    z-index: 6;
 }
 
 .cadran {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 0.2vw solid #ffffff; /* Bordure relative */
-    background: conic-gradient(
-        from -140deg,
-        #cb09cb 120deg,
-        #9b969b 280deg,
-        #ff1e77 280deg,
-        #ff1e77 360deg
-    );
+    overflow: hidden;
+    cursor: crosshair;
+    /* Garde le curseur en croix sur le cadran */
+    z-index: 7;
+    /* Assurez-vous que l'aiguille ou autres éléments importants sont au-dessus */
+    border: 2px solid #ffffff;
+    /* Violet profond */
+    background: conic-gradient(from -140deg,
+            #cb09cb 120deg,
+            #9b969b 280deg,
+            #ff1e77 280deg,
+            #ff1e77 360deg);
+    /* Zone de 60° avec #cb09cb */
     opacity: 0.85;
+    /* Ajoute un peu de transparence */
 }
 
 .cercle-central {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
     background: rgb(218, 112, 214);
-    border: 0.2vw solid #b229b2; /* Bordure relative */
+    /* Rose orchidée */
+    border: 2px solid #b229b2;
+    /* Bordure rose pâle */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+    cursor: default !important;
+    /* Assure que le curseur reste par défaut */
+    /* Alternativement, utilisez cursor: not-allowed !important; pour montrer que la zone n'est pas cliquable */
 }
 
 .aiguille {
-    width: 0.2vw; /* Taille relative */
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    width: 2px;
     height: 100%;
     background: #9400D3;
+    /* Violet foncé pour l'aiguille */
     transform-origin: bottom center;
+    transform: rotate(0deg);
+    z-index: 9;
 }
 
 .bpm-value {
-    font-size: 2vw; /* Taille de texte relative */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
     font-weight: bold;
     color: #FFFFFF;
+    /* Blanc pour le contraste */
+    z-index: 11;
 }
 
 /* Styles pour le conteneur des boutons */
 .button-Style {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    top: 40%;
+    z-index: 5;
 }
 
 .button-Plus_Moins {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    max-width: 300px; /* Largeur maximale */
+    width: 350px;
+
 }
 
 .btn {
     background-color: hsl(309, 91%, 60%);
-    font-size: 1.5vw; /* Taille de texte relative */
+    /* Ton rose vif */
+    font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
     border: none;
     color: white;
     cursor: pointer;
-    border-radius: 0.5vw; /* Bordures arrondies en unités relatives */
+    border-radius: 6px;
+    /* Coins arrondis pour un look plus doux */
 }
 
 .btn-Plus,
 .btn-Moins {
-    width: 4vw; /* Taille relative */
-    height: 4vw; /* Taille relative */
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
 }
 
 .btn-Play {
-    width: 8vw; /* Taille relative */
-    height: 4vw; /* Taille relative */
-    margin-top: 1vw; /* Margin relative */
+    width: 80px;
+    height: 40px;
+    margin-top: 120px;
+    /* Ajuste la valeur selon le décalage souhaité */
 }
 
 /* Hover et active pour tous les boutons */
 .btn:hover {
     background-color: hsl(291, 80%, 70%);
+    /* Un rose/violet pastel */
 }
 
 .btn:active {
     transform: scale(0.95);
+}
+
+
+/* Media Queries */
+@media (max-width: 200px) {
+
+    /* Metronome */
+    .Metronome {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cadran {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bpm-value {
+        font-size: 18px;
+    }
 }
