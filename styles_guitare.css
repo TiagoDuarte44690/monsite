@@ -164,7 +164,7 @@ td {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 200px) {
 
     /* Le manche */
     .manche {
