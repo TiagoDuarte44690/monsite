@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manche de Guitare et Metronome</title>
+    <link rel="stylesheet" href="styles_guitare.css">
+    <link rel="stylesheet" href="styles_metronome.css">
+</head>
+
+<body>
+    <!-- Manche de guitare -->
+    <div class="manche">
+        <div class="frettes"></div>
+        <div class="cordes"></div>
+    </div>
+    <div id="display"></div>
+
+    <table>
+        <caption>Intervalles et Notes</caption>
+        <thead>
+            <tr>
+                <th>Intervalles</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="intervals-row"></tr>
+            <tr id="notes-row"></tr>
+        </tbody>
+    </table>
+
+    <select id="scale-selector">
+        <option value="default">À défaut</option>
+        <option value="modesIonien">Mode Ionien</option>
+        <option value="modesDorien">Mode Dorien</option>
+        <option value="modesPhrygien">Mode Phrygien</option>
+        <option value="modesLydien">Mode Lydien</option>
+        <option value="modesMixolydien">Mode Mixolydien</option>
+        <option value="modesEolien">Mode Éolien</option>
+        <option value="modesLocrien">Mode Locrien</option>
+        <option value="Pentatonique">Pentatonique</option>
+        <option value="Blues">Blues</option>
+        <option value="Majeure">Triade Majeure</option>
+        <option value="Mineure">Triade Mineure</option>
+    </select>
+
+    <!-- Metronome -->
+    <div class="Metronome">
+        <div class="cadran">
+            <div class="degrade"></div>
+            <div class="aiguille"></div>
+            <div class="cercle-central"></div>
+            <div class="triangle"></div>
+            <div class="bpm-value">144 bpm</div>
+        </div>
+        <div class="button-Style">
+            <div class="button-Plus_Moins">
+                <button class="btn btn-Moins" onmousedown="startChangingBpm(-1)" onmouseup="stopChangingBpm()"
+                    onmouseleave="stopChangingBpm()">-</button>
+                <button class="btn btn-Plus" onmousedown="startChangingBpm(1)" onmouseup="stopChangingBpm()"
+                    onmouseleave="stopChangingBpm()">+</button>
+            </div>
+            <div class="button-Play">
+                <button class="btn btn-Play" onclick="toggleMetronome()">Play</button>
+            </div>
+        </div>
+
+        <body>
+            <audio id="metronome-sound" src="son/Metronome234.mp3"></audio>
+    </div>
+
+    <script src="./scripts_guitare.js"></script>
+    <script src="./scripts_metronome.js"></script>
+</body>
+
+</html>
