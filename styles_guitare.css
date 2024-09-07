@@ -163,26 +163,3 @@ td {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
-/* Media Queries */
-@media (max-width: 200px) {
-
-    /* Le manche */
-    .manche {
-        width: 90vw;
-        height: 150px;
-        bottom: -25%;
-    }
-
-    /* Tableau des Intervalles et Notes */
-    table {
-        font-size: 12px;
-        top: 5%;
-    }
-
-    /* Menu déroulant */
-    #scale-selector {
-        font-size: 14px;
-        padding: 3px;
-    }
-}
