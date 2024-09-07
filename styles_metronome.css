@@ -64,7 +64,7 @@
     top: -50%;
     width: 2px;
     height: 100%;
-    background: #ffe600;
+    background: #000000;
     /* Violet foncé pour l'aiguille */
     transform-origin: bottom center;
     transform: rotate(0deg);
