@@ -130,7 +130,7 @@ table {
 /*Entete du tableau des Intervalles et et Notes*/
 caption {
     font-size: 20px;
-    background-color: #8d8f9d;
+    background-color: #725c24;
     color: black;
     border: 3px solid #ffe600;
     text-align: center;
@@ -155,7 +155,7 @@ td {
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
-    background-color: #8d8f9d;
+    background-color: #725c24;
     border: 2px solid #ffe600;
     padding: 5px;
     font-size: 16px;
