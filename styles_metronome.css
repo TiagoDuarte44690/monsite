@@ -25,11 +25,11 @@
     /* Garde le curseur en croix sur le cadran */
     z-index: 7;
     /* Assurez-vous que l'aiguille ou autres éléments importants sont au-dessus */
-    border: 2px solid #ffffff;
+    border: 2px solid #000000;
     /* Violet profond */
     background: conic-gradient(from -140deg,
-            #604d13 120deg,
-            #fbff11 280deg,
+            #cecbc3 120deg,
+            #725c24 280deg,
             #830034 280deg,
             #830034 360deg);
     /* Zone de 60° avec #cb09cb */
@@ -44,9 +44,9 @@
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
-    background: rgb(218, 112, 214);
+    background: #cda54e;
     /* Rose orchidée */
-    border: 2px solid #ffe600;
+    border: 2px solid #000000;
     /* Bordure rose pâle */
     border-radius: 50%;
     display: flex;
