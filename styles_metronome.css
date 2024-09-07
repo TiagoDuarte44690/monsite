@@ -28,7 +28,7 @@
     border: 2px solid #ffffff;
     /* Violet profond */
     background: conic-gradient(from -140deg,
-            #977717 120deg,
+            #604d13 120deg,
             #fbff11 280deg,
             #830034 280deg,
             #830034 360deg);
@@ -46,7 +46,7 @@
     height: 80%;
     background: rgb(218, 112, 214);
     /* Rose orchidée */
-    border: 2px solid #b229b2;
+    border: 2px solid #ffe600;
     /* Bordure rose pâle */
     border-radius: 50%;
     display: flex;
@@ -64,7 +64,7 @@
     top: -50%;
     width: 2px;
     height: 100%;
-    background: #9400D3;
+    background: #ffe600;
     /* Violet foncé pour l'aiguille */
     transform-origin: bottom center;
     transform: rotate(0deg);
