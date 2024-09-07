@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100%;
     margin: 0;
-    background-color: #e43c82;
+    background-color: #d0b9c3;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -20,7 +20,7 @@ body {
     width: 95vw;
     max-height: 500px;
     height: 30vh;
-    background-color: #abffca;
+    background-color: #725c24;
     border-radius: 20px;
     bottom: -35%;
 }

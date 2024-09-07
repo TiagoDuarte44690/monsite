@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             metronomeSound.currentTime = 0; // Rewind le son Ã  0
             return;
         }
-        
+
         // Calcul de l'intervalle en millisecondes
         const interval = 60000 / bpm;
 
@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         bpmValue.textContent = `${bpmDisplayValue} bpm`;
         Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son lorsque les BPM changent
     }
+
+    //-------------------------------------------------------------------------------
 
     updateAiguille('bpm');
 
