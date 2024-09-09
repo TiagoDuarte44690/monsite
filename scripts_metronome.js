@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Calcul de l'intervalle en millisecondes en fonction du BPM
         const interval = 60000 / bpm; // Temps pour un battement complet
-        const beatInterval = interval / 4; // Temps pour chaque temps
+        const beatInterval = interval; // Temps pour chaque temps
     
         // Initialiser un compteur de temps
         let beatCounter = 1;
