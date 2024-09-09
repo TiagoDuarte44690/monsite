@@ -101,8 +101,9 @@ body {
 
 /*Une corde*/
 .corde {
-    border-width: 3px solid black;
+    height: 3px;
     width: 106%;
+    background-color: black;
     position: relative;
 }
 
