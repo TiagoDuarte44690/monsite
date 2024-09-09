@@ -35,7 +35,7 @@ body {
 
 /*Une frette*/
 .frette {
-    width: 3px;
+    width: 2px;
     height: 100%;
     background-color: #ffe600;
     position: absolute;
