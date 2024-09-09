@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const { left, top, width, height } = cadran.getBoundingClientRect();
 
     // Fonction pour jouer le son du métronome en fonction du BPM
+    let metronomeInterval = null;
+    let isPlaying = false;
+    
     function Son(bpm) {
         if (bpm === 0) {
             // Arrêter le métronome et le son si le BPM est 0
@@ -35,19 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             metronome234.currentTime = 0; // Remet le son à 0
             return;
         }
-
+    
         // Calcul de l'intervalle en millisecondes en fonction du BPM
-        const interval = 60000 / bpm; // Temps pour un battement complet (4 temps)
+        const interval = 60000 / bpm; // Temps pour un battement complet
         const beatInterval = interval / 4; // Temps pour chaque temps
-
+    
         // Initialiser un compteur de temps
         let beatCounter = 1;
-
+    
         if (isPlaying) {
             if (metronomeInterval) {
                 clearInterval(metronomeInterval);
             }
-
+    
             metronomeInterval = setInterval(() => {
                 // Choisir le son à jouer en fonction du temps
                 let audioToPlay;
@@ -58,15 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Temps faible (2ème, 3ème et 4ème temps)
                     audioToPlay = metronome234; // Son pour les temps faibles
                 }
-
+    
                 audioToPlay.currentTime = 0; // Remet le son à 0 avant chaque lecture
                 audioToPlay.play(); // Joue le son
-
+    
                 // Avancer au prochain temps
-                if (beatCounter === 4) {
-                    beatCounter = 0;
-                }
                 beatCounter++;
+                if (beatCounter > 4) {
+                    beatCounter = 1;
+                }
             }, beatInterval);
         } else {
             if (metronomeInterval) {
@@ -77,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             metronome234.pause(); // Arrête le son
         }
     }
+    
 
 
     // Fonction pour incrémenter ou décrémenter le BPM
