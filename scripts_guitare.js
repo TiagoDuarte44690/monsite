@@ -45,13 +45,32 @@ function genererTableauNotes(cordes, notes) {
 
 function generateFrettes() {
     const frettesContainer = document.querySelector('.frettes');
-    casesPositions.forEach(position => {
+
+    casesPositions.forEach((position, index) => {
+        // Création de la frette
         const frette = document.createElement('div');
         frette.className = 'frette';
         frette.style.left = `${position}%`;
+
+        // Création du numéro de case
+        const caseNumber = document.createElement('div');
+        caseNumber.className = 'case-number';
+        caseNumber.textContent = index; // Affiche le numéro de la case (0, 1, 2, ...)
+
+        // Calcul de la position du numéro de case entre les frettes
+        const positionInterCase = position + (incrementCases / 2);
+        caseNumber.style.position = 'absolute';
+        caseNumber.style.top = '-20px'; // Ajustez cette valeur pour positionner correctement le numéro
+        caseNumber.style.left = `${positionInterCase}%`; // Place le numéro entre les frettes
+        caseNumber.style.transform = 'translateX(-50%)'; // Centre le numéro par rapport à la frette
+        caseNumber.style.zIndex = '2'; // S'assure que les numéros sont au-dessus des frettes
+
+        // Ajout de la frette et du numéro au conteneur
         frettesContainer.appendChild(frette);
+        frettesContainer.appendChild(caseNumber);
     });
 }
+
 
 function generateCordes() {
     const mancheContainer = document.querySelector('.manche');

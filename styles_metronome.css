@@ -15,7 +15,7 @@
 .cadran {
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
@@ -30,7 +30,7 @@
     background: conic-gradient(from -140deg,
             #cecbc3 120deg,
             #830034 280deg,
-            #247224 280deg,
+            #725c24 280deg,
             #725c24 360deg);
     /* Zone de 60° avec #cb09cb */
     opacity: 0.85;

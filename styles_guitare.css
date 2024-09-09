@@ -44,6 +44,13 @@ body {
     z-index: 1;
 }
 
+.case-number {
+    font-size: 15px; /* Ajustez la taille du texte */
+    color: #000; /* Couleur des numéros */
+    text-align: center;
+    transform: translateX(-50%); /* Centre le texte horizontalement */
+}
+
 /*les voyants des cordes*/
 .voyant {
     display: flex;
