@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const minusButton = document.querySelector('.btn-Moins');
     const playButton = document.querySelector('.btn-Play');
     const cercleCentral = document.querySelector('.cercle-central');
-    const metronomeSound = document.getElementById('metronome-sound'); // Ajout de la rÃ©fÃ©rence audio
+    //const metronomeSound = document.getElementById('metronome-sound'); // Ajout de la rÃ©fÃ©rence audio
 
     let isPlaying = false;
     let metronomeInterval;
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const { left, top, width, height } = cadran.getBoundingClientRect();
 
     function Son(bpm) {
+        /*
         if (bpm === 0) {
             // ArrÃªter le mÃ©tronome et le son si le BPM est 0
             if (metronomeInterval) {
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             metronomeSound.pause(); // ArrÃªte le son
         }
+            */
     }
 
     function incrementBpm(direction) {
