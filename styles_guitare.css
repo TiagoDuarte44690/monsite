@@ -101,9 +101,8 @@ body {
 
 /*Une corde*/
 .corde {
-    border-width: calc(3px / devicePixelRatio)
+    border-width: 3px solid black)
     width: 106%;
-    background-color: black;
     position: relative;
 }
 
