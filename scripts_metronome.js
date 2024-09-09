@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Déclaration des variables audio
     var metronome1 = new Audio('/son/Metronome1.mp3');
-    var metronome234 = new Audio('/son/Metronome234.mp3');
+    var metronome234 = new Audio('/son/1489.mp3');
 
     let isPlaying = false;
     let metronomeInterval;
