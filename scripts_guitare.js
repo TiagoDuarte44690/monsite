@@ -81,7 +81,7 @@ function generateCordes() {
     cordes.forEach((corde, index) => {
         const cordeDiv = document.createElement('div');
         cordeDiv.className = 'corde';
-        cordeDiv.style.top = `${(cordes.length - index - 1) * spacing}px`;
+        cordeDiv.style.top = `${5 * spacing}px`;
         const cordeLabel = document.createElement('span');
         cordeLabel.textContent = corde;
         cordeDiv.appendChild(cordeLabel);
