@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Sélection des éléments du DOM
     const cadran = document.querySelector('.cadran');
     const aiguille = document.querySelector('.aiguille');
     const bpmValue = document.querySelector('.bpm-value');
@@ -6,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const minusButton = document.querySelector('.btn-Moins');
     const playButton = document.querySelector('.btn-Play');
     const cercleCentral = document.querySelector('.cercle-central');
-    //const metronomeSound = document.getElementById('metronome-sound'); // Ajout de la rÃ©fÃ©rence audio
+
+    // Déclaration des variables audio
+    var metronome1 = new Audio('/Exercices_de_base/public/sounds/metronome1.mp3');
+    var metronome234 = new Audio('/Exercices_de_base/public/sounds/metronome234.mp3');
 
     let isPlaying = false;
     let metronomeInterval;
@@ -17,20 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxBpm = 1000;
     const { left, top, width, height } = cadran.getBoundingClientRect();
 
+    // Fonction pour jouer le son du métronome en fonction du BPM
     function Son(bpm) {
-        /*
         if (bpm === 0) {
-            // ArrÃªter le mÃ©tronome et le son si le BPM est 0
+            // Arrêter le métronome et le son si le BPM est 0
             if (metronomeInterval) {
                 clearInterval(metronomeInterval);
                 metronomeInterval = null;
             }
-            metronomeSound.pause();
-            metronomeSound.currentTime = 0; // Rewind le son Ã  0
+            metronome1.pause();
+            metronome1.currentTime = 0; // Remet le son à 0
+            metronome234.pause();
+            metronome234.currentTime = 0; // Remet le son à 0
             return;
         }
 
-        // Calcul de l'intervalle en millisecondes
+        // Choisir le fichier audio basé sur une condition ou aléatoirement
+        const audioToPlay = bpm > 120 ? metronome234 : metronome1; // Exemple : choisir metronome234 pour BPM > 120
+
+        // Calcul de l'intervalle en millisecondes en fonction du BPM
         const interval = 60000 / bpm;
 
         if (isPlaying) {
@@ -38,33 +47,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(metronomeInterval);
             }
             metronomeInterval = setInterval(() => {
-                metronomeSound.currentTime = 0; // Rewind le son Ã  chaque lecture
-                metronomeSound.play(); // Joue le son
+                audioToPlay.currentTime = 0; // Remet le son à 0 avant chaque lecture
+                audioToPlay.play(); // Joue le son
             }, interval);
         } else {
             if (metronomeInterval) {
                 clearInterval(metronomeInterval);
                 metronomeInterval = null;
             }
-            metronomeSound.pause(); // ArrÃªte le son
+            audioToPlay.pause(); // Arrête le son
         }
-            */
     }
 
+    // Fonction pour incrémenter ou décrémenter le BPM
     function incrementBpm(direction) {
         if (direction === 'plus' && angleDeg < 280) {
             bpmDisplayValue += incrementStep;
         } else if (direction === 'moins' && angleDeg > 0) {
             bpmDisplayValue -= incrementStep;
         }
-        bpmDisplayValue = Math.max(0, bpmDisplayValue); // Assure que BPM ne soit pas nÃ©gatif
+        bpmDisplayValue = Math.max(0, bpmDisplayValue); // Assure que BPM ne soit pas négatif
         bpmValue.textContent = `${bpmDisplayValue} bpm`;
         updateAiguille('bpm');
-        Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son lorsque les BPM changent
+        Son(bpmDisplayValue); // Met à jour la fréquence du son lorsque les BPM changent
     }
 
+    // Fonction pour mettre à jour l'aiguille et le BPM en fonction du type d'update
     function updateAiguille(updateType, event) {
         if (updateType === 'angle' && event) {
+            // Calcul de l'angle en fonction de la position du clic
             const calculAngle = (Math.atan2(event.clientY - (top + height / 2), event.clientX - (left + width / 2)) * 180 / Math.PI + 230) % 360;
             if (calculAngle < 280) {
                 angleDeg = calculAngle;
@@ -76,13 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         aiguille.style.transform = `rotate(${angleDeg + 220}deg)`;
         bpmValue.textContent = `${bpmDisplayValue} bpm`;
-        Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son lorsque les BPM changent
+        Son(bpmDisplayValue); // Met à jour la fréquence du son lorsque les BPM changent
     }
 
-    //-------------------------------------------------------------------------------
-
+    // Initialisation de l'aiguille avec la valeur de BPM actuelle
     updateAiguille('bpm');
 
+    // Gestion des événements de clic pour les boutons et le cadran
     document.addEventListener('click', function (event) {
         switch (event.target) {
             case plusButton:
@@ -94,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case playButton:
                 isPlaying = !isPlaying;
                 playButton.textContent = isPlaying ? 'Stop' : 'Play';
-                Son(bpmDisplayValue); // Met Ã  jour la frÃ©quence du son en fonction de l'Ã©tat de lecture
+                Son(bpmDisplayValue); // Met à jour la fréquence du son en fonction de l'état de lecture
                 break;
             default:
                 if (cadran.contains(event.target) && !cercleCentral.contains(event.target)) {
