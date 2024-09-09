@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var metronome234 = new Audio('/son/metronome234.mp3');
 
     let isPlaying = false;
-    let metronomeInterval;
+    //let metronomeInterval;
     const incrementStep = 1;
     let bpmDisplayValue = 0;
     let angleDeg = 0;
@@ -23,37 +23,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour jouer le son du métronome en fonction du BPM
     function Son(bpm) {
-        if (bpm === 0) {
-            // Arrêter le métronome
-            clearInterval(metronomeInterval);
-            metronomeInterval = null;
-            metronome1.pause();
-            metronome1.currentTime = 0;
-            metronome234.pause();
-            metronome234.currentTime = 0;
-            return;
-        }
-    
-        const interval = 60000 / bpm / 4; // Temps pour chaque temps
-        let beatCounter = 0;
-    
-        if (isPlaying) {
-            clearInterval(metronomeInterval);
-            metronomeInterval = setInterval(() => {
-                const audioToPlay = (beatCounter % 4 === 0) ? metronome234 : metronome1;
-                audioToPlay.currentTime = 0;
-                audioToPlay.play();
-                beatCounter++;
+        let isPlaying = false;
+        let intervalId = null; // Pour stocker l'identifiant de l'intervalle
+        let count = 0;
+
+        // Fonction pour démarrer le métronome
+        function startMetronome(bpm) {
+            if (bpm <= 0) {
+                console.error('BPM doit être supérieur à 0');
+                return;
+            }
+
+            // Calculer l'intervalle entre les battements
+            const interval = 60000 / bpm;
+
+            // Assurez-vous que le métronome n'est pas déjà en cours
+            if (isPlaying) {
+                stopMetronome();
+            }
+
+            // Mettre à jour l'état du métronome
+            isPlaying = true;
+
+            // Démarrer l'intervalle
+            intervalId = setInterval(() => {
+                count++;
+                if (count > 5) count = 1;
+
+                // Jouer ou mettre en pause les sons en fonction du compteur
+                if (count === 1) {
+                    metronome1.play();       // Jouer le son du premier temps
+                    metronome234.pause();    // Mettre en pause le son des temps suivants
+                } else {
+                    metronome234.play();     // Jouer le son des temps suivants
+                    metronome1.pause();      // Mettre en pause le son du premier temps
+                }
             }, interval);
-        } else {
-            clearInterval(metronomeInterval);
-            metronomeInterval = null;
-            metronome1.pause();
-            metronome234.pause();
+        }
+
+        // Fonction pour arrêter le métronome
+        function stopMetronome() {
+            if (isPlaying) {
+                clearInterval(intervalId); // Arrêter l'intervalle
+                intervalId = null; // Réinitialiser l'identifiant de l'intervalle
+                isPlaying = false;
+
+                // Arrêter les sons
+                metronome1.pause();
+                metronome234.pause();
+            }
         }
     }
-    
-    
+
+
 
     // Fonction pour incrémenter ou décrémenter le BPM
     function incrementBpm(direction) {
