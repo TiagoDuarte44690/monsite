@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let bpmDisplayValue = 0;
     let angleDeg = 0;
 
-    const maxBpm = 100;
+    const maxBpm = 300;
     const { left, top, width, height } = cadran.getBoundingClientRect();
 
     // Fonction pour jouer le son du métronome en fonction du BPM
