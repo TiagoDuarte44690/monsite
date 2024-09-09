@@ -76,18 +76,19 @@ function generateCordes() {
     const mancheContainer = document.querySelector('.manche');
     const cordesContainer = document.querySelector('.cordes');
     const mancheHeight = mancheContainer.offsetHeight;
-    const spacing = mancheHeight / cordes.length;
+    const spacing = Math.round(mancheHeight / cordes.length);
 
     cordes.forEach((corde, index) => {
         const cordeDiv = document.createElement('div');
         cordeDiv.className = 'corde';
-        cordeDiv.style.top = `${1 * spacing}px`;
+        cordeDiv.style.top = `${(cordes.length - index - 1) * spacing}px`;
         const cordeLabel = document.createElement('span');
         cordeLabel.textContent = corde;
         cordeDiv.appendChild(cordeLabel);
         cordesContainer.appendChild(cordeDiv);
     });
 }
+
 
 function generateVoyants() {
     const cordesContainer = document.querySelector('.cordes');
