@@ -24,56 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fonction pour jouer le son du métronome en fonction du BPM
     function Son(bpm) {
         if (bpm === 0) {
-            // Arrêter le métronome et le son si le BPM est 0
-            if (metronomeInterval) {
-                clearInterval(metronomeInterval);
-                metronomeInterval = null;
-            }
+            // Arrêter le métronome
+            clearInterval(metronomeInterval);
+            metronomeInterval = null;
             metronome1.pause();
-            metronome1.currentTime = 0; // Remet le son à 0
+            metronome1.currentTime = 0;
             metronome234.pause();
-            metronome234.currentTime = 0; // Remet le son à 0
+            metronome234.currentTime = 0;
             return;
         }
     
-        // Calcul de l'intervalle en millisecondes en fonction du BPM
-        const interval = 60000 / bpm; // Temps pour un battement complet (4 temps)
-        const beatInterval = interval / 4; // Temps pour chaque temps
-    
-        // Initialiser un compteur de temps
+        const interval = 60000 / bpm / 4; // Temps pour chaque temps
         let beatCounter = 0;
     
         if (isPlaying) {
-            if (metronomeInterval) {
-                clearInterval(metronomeInterval);
-            }
-    
+            clearInterval(metronomeInterval);
             metronomeInterval = setInterval(() => {
-                // Choisir le son à jouer en fonction du temps
-                let audioToPlay;
-                if (beatCounter % 4 === 0) {
-                    // Temps fort (1er temps)
-                    audioToPlay = metronome234; // Son pour le temps fort
-                } else {
-                    // Temps faible (2ème, 3ème et 4ème temps)
-                    audioToPlay = metronome1; // Son pour les temps faibles
-                }
-    
-                audioToPlay.currentTime = 0; // Remet le son à 0 avant chaque lecture
-                audioToPlay.play(); // Joue le son
-    
-                // Avancer au prochain temps
+                const audioToPlay = (beatCounter % 4 === 0) ? metronome234 : metronome1;
+                audioToPlay.currentTime = 0;
+                audioToPlay.play();
                 beatCounter++;
-            }, beatInterval);
+            }, interval);
         } else {
-            if (metronomeInterval) {
-                clearInterval(metronomeInterval);
-                metronomeInterval = null;
-            }
-            metronome1.pause(); // Arrête le son
-            metronome234.pause(); // Arrête le son
+            clearInterval(metronomeInterval);
+            metronomeInterval = null;
+            metronome1.pause();
+            metronome234.pause();
         }
     }
+    
     
 
     // Fonction pour incrémenter ou décrémenter le BPM
