@@ -41,7 +41,7 @@ function Son(bpm) {
     const beatInterval = interval / 4; // Temps pour chaque temps
 
     // Initialiser un compteur de temps
-    let beatCounter = 0;
+    let beatCounter = 1;
 
     if (isPlaying) {
         if (metronomeInterval) {
@@ -51,18 +51,21 @@ function Son(bpm) {
         metronomeInterval = setInterval(() => {
             // Choisir le son à jouer en fonction du temps
             let audioToPlay;
-            if (beatCounter % 4 === 0) {
+            if (beatCounter === 1) {
                 // Temps fort (1er temps)
-                audioToPlay = metronome234; // Son pour le temps fort
+                audioToPlay = metronome1; // Son pour le temps fort
             } else {
                 // Temps faible (2ème, 3ème et 4ème temps)
-                audioToPlay = metronome1; // Son pour les temps faibles
+                audioToPlay = metronome234; // Son pour les temps faibles
             }
 
             audioToPlay.currentTime = 0; // Remet le son à 0 avant chaque lecture
             audioToPlay.play(); // Joue le son
 
             // Avancer au prochain temps
+            if(beatCounter === 4){
+                beatCounter = 0;
+            }
             beatCounter++;
         }, beatInterval);
     } else {
