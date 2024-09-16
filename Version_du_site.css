@@ -1,11 +1,11 @@
-
 /* Cadre pour la version */
 .version-container {
     position: absolute;
     width: 70vw;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     text-align: center;
     background-color: #725c24;
     border-radius: 0 0 20px 20px;
@@ -14,10 +14,11 @@
     color: #fff;
     font-size: 18px;
     font-weight: bold;
+
+
 }
 
 .version-container::before {
     content: "Version 1.0.3";
     /* Remplacez ce texte par la version souhaitée */
 }
-
