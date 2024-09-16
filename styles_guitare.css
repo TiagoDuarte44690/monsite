@@ -1,16 +1,21 @@
-/*Le manche*/
+/* Conteneur principal */
+.guitare {
+    position: relative;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+/* Le manche */
 .manche {
     position: relative;
     display: flex;
-    bottom: 100%;
-    width: 95vw;
+    width: 100%;
     height: 300px;
     background-color: #725c24;
     border-radius: 20px;
-
 }
 
-/*Les frettes*/
+/* Les frettes */
 .frettes {
     position: relative;
     width: 90%;
@@ -18,7 +23,7 @@
     margin: 0 5%;
 }
 
-/*Une frette*/
+/* Une frette */
 .frette {
     width: 4px;
     height: 100%;
@@ -29,14 +34,17 @@
     z-index: 1;
 }
 
+/* Numéros des cases */
 .case-number {
-    font-size: 15px; /* Ajustez la taille du texte */
-    color: #000; /* Couleur des numéros */
+    font-size: 15px;
+    color: #000;
     text-align: center;
-    transform: translateX(-50%); /* Centre le texte horizontalement */
+    transform: translateX(-50%);
+    position: absolute;
+    top: 10px; /* Ajuster selon besoin */
 }
 
-/*les voyants des cordes*/
+/* Les voyants des cordes */
 .voyant {
     display: flex;
     justify-content: center;
@@ -51,26 +59,25 @@
     transform: translate(-50%, -50%);
     z-index: 10;
     cursor: pointer;
-    pointer-events: auto;
 }
 
-/*Un voyants d'une cordes en "OFF" */
+/* Voyant OFF */
 .voyant.off {
     display: none;
 }
 
-/*Un voyants d'une cordes en "STANDBY" */
+/* Voyant STANDBY */
 .voyant.standby {
     background-color: red;
     opacity: 40%;
 }
 
-/*Un voyants d'une cordes en "ON" */
+/* Voyant ON */
 .voyant.on {
     background-color: green;
 }
 
-/*Les cordes*/
+/* Les cordes */
 .cordes {
     position: absolute;
     top: 45%;
@@ -84,7 +91,7 @@
     pointer-events: none;
 }
 
-/*Une corde*/
+/* Une corde */
 .corde {
     height: 3px;
     width: 106%;
@@ -92,7 +99,7 @@
     position: relative;
 }
 
-/*Zone de texte pour l'indication de la note de chaque corde*/
+/* Zone de texte pour l'indication de la note de chaque corde */
 .corde span {
     position: absolute;
     left: -25px;
@@ -105,7 +112,7 @@
     text-align: center;
 }
 
-/*tableau des Intervalles et et Notes*/
+/* Tableau des Intervalles et Notes */
 table {
     font-size: 15px;
     border-collapse: collapse;
@@ -119,7 +126,7 @@ table {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/*Entete du tableau des Intervalles et et Notes*/
+/* Entête du tableau */
 caption {
     font-size: 20px;
     background-color: #725c24;
@@ -131,16 +138,15 @@ caption {
     padding: 10px;
 }
 
-/*interieur des cellules du tableau des Intervalles et et Notes*/
-th,
-td {
+/* Intérieur des cellules du tableau */
+th, td {
     border: 3px solid #ffe600;
     padding: 0 16px;
     text-align: center;
     z-index: 5;
 }
 
-/*menu deroulant*/
+/* Menu déroulant */
 #scale-selector {
     position: fixed;
     top: 5%;
