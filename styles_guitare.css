@@ -1,20 +1,12 @@
 /* Conteneur principal */
 /* Conteneur principal */
 .guitare {
-    position: fixed;
+    position: absolute;
+    top: 50%;
     width: 95vw;
     /* Ajustez selon la largeur désirée */
     height: 300px;
     /* Ajustez la hauteur selon les besoins */
-
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
 }
 
 /* Le manche */
