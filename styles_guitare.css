@@ -7,10 +7,7 @@
     /* Ajustez selon la largeur désirée */
     height: 300px;
     /* Ajustez la hauteur selon les besoins */
-}
 
-/* Le manche */
-.manche {
     position: absolute;
     left: 50%;
     top: 42%;
@@ -19,8 +16,10 @@
     flex-direction: column;
     align-items: center;
 
+}
 
-
+/* Le manche */
+.manche {
     position: relative;
     display: flex;
     width: 100%;
