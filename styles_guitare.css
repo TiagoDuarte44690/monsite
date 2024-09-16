@@ -2,9 +2,11 @@
 /* Conteneur principal */
 .guitare {
     position: fixed;
-    bottom: 50%; /* Fixe le conteneur en bas de la page */
-    width: 95vw; /* Ajustez selon la largeur désirée */
-    height: 300px; /* Ajustez la hauteur selon les besoins */
+    top: 50px;
+    width: 95vw;
+    /* Ajustez selon la largeur désirée */
+    height: 300px;
+    /* Ajustez la hauteur selon les besoins */
 }
 
 /* Le manche */
@@ -43,7 +45,8 @@
     text-align: center;
     transform: translateX(-50%);
     position: absolute;
-    top: 10px; /* Ajuster selon besoin */
+    top: 10px;
+    /* Ajuster selon besoin */
 }
 
 /* Les voyants des cordes */
@@ -141,7 +144,8 @@ caption {
 }
 
 /* Intérieur des cellules du tableau */
-th, td {
+th,
+td {
     border: 3px solid #ffe600;
     padding: 0 16px;
     text-align: center;
