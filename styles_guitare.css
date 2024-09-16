@@ -1,16 +1,3 @@
-/*Le fond de la page*/
-html,
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-    background-color: #cda54e;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
 /*Le manche*/
 .manche {
     position: relative;
