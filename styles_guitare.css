@@ -3,8 +3,6 @@
 .guitare {
     position: fixed;
     bottom: 0; /* Fixe le conteneur en bas de la page */
-    left: 50%; /* Positionne le conteneur à 50% de la largeur de la page */
-    transform: translateX(-50%); /* Centre le conteneur horizontalement */
     width: 95vw; /* Ajustez selon la largeur désirée */
     height: 300px; /* Ajustez la hauteur selon les besoins */
 }
