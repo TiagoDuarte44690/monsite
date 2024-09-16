@@ -1,24 +1,22 @@
 /* Cadre pour la version */
 .version-container {
-    position: absolute;
+    position: relative; /* Relative ou absolute selon tes besoins */
     width: 70vw;
+    margin: 0 auto; /* Centre l'élément horizontalement */
+    top: 0; /* Aligne l'élément en haut du parent */
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
     text-align: center;
     background-color: #725c24;
     border-radius: 0 0 20px 20px;
-    padding: 2px;
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-
-
 }
 
 .version-container::before {
     content: "Version 1.0.3";
-    /* Remplacez ce texte par la version souhaitée */
 }
