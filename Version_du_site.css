@@ -1,0 +1,37 @@
+
+/* Cadre pour la version */
+.version-container {
+    position: absolute;
+    top: 0;
+    width: 70%;
+    background-color: #725c24;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    padding: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    z-index: 100;
+}
+
+.version-container::before {
+    content: "Version 1.18.3";
+    /* Remplacez ce texte par la version souhaitée */
+}
+
+/* Contenu principal */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    max-height: 500px;
+    height: 30vh;
+    background-color: #725c24;
+    border-radius: 20px;
+    margin-top: 60px;
+    /* Ajuster si nécessaire pour ne pas chevaucher le cadre de la version */
+    z-index: 100;
+}
