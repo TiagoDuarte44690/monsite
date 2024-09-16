@@ -1,8 +1,7 @@
-/* Le fond de la page */
+/*Le fond de la page*/
 html,
 body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -16,16 +15,17 @@ body {
 .version-container {
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 70%;
     background-color: #725c24;
     border-radius: 0 0 20px 20px;
     text-align: center;
-    padding: 10px;
+    padding: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.5;
+    z-index: 100;
 }
 
 .version-container::before {
@@ -45,4 +45,5 @@ body {
     border-radius: 20px;
     margin-top: 60px;
     /* Ajuster si nécessaire pour ne pas chevaucher le cadre de la version */
+    z-index: 100;
 }
