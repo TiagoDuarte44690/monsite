@@ -2,7 +2,7 @@
 /* Conteneur principal */
 .guitare {
     position: fixed;
-    bottom: 0; /* Fixe le conteneur en bas de la page */
+    bottom: 50%; /* Fixe le conteneur en bas de la page */
     width: 95vw; /* Ajustez selon la largeur désirée */
     height: 300px; /* Ajustez la hauteur selon les besoins */
 }
