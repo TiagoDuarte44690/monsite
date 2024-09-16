@@ -1,16 +1,16 @@
 /* Conteneur principal */
-/* Conteneur principal */
 .guitare {
     position: absolute;
     left: 50%;
-    top: 42%;
-    transform: translate(-50%, -50%);
+    bottom: 10px; /* Ajustez cette valeur selon vos besoins pour laisser un espace du bas de la page */
+    transform: translateX(-50%); /* Ne pas utiliser translateY ici */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 250px;
     height: 250px;
 }
+
 
 /* Le manche */
 .manche {
