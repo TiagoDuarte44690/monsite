@@ -22,12 +22,15 @@ body {
     text-align: center;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.version-text {
     color: #fff;
     font-size: 18px;
-    margin: 0;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.version-container::before {
+    content: "Version 1.18.3";
+    /* Remplacez ce texte par la version souhaitée */
 }
 
 /* Contenu principal */
@@ -40,5 +43,6 @@ body {
     height: 30vh;
     background-color: #725c24;
     border-radius: 20px;
-    margin-top: 60px; /* Ajuster si nécessaire pour ne pas chevaucher le cadre de la version */
+    margin-top: 60px;
+    /* Ajuster si nécessaire pour ne pas chevaucher le cadre de la version */
 }
