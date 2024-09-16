@@ -17,7 +17,7 @@
 }
 
 .version-container::before {
-    content: "Version 1.0";
+    content: "Version 1.0.1";
     /* Remplacez ce texte par la version souhaitée */
 }
 
