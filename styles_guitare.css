@@ -2,7 +2,6 @@
 /* Conteneur principal */
 .guitare {
     position: fixed;
-    top: 50%;
     width: 95vw;
     /* Ajustez selon la largeur désirée */
     height: 300px;
@@ -10,7 +9,7 @@
 
     position: absolute;
     left: 50%;
-    top: 42%;
+    top: 10%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
