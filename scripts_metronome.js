@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cercleCentral = document.querySelector('.cercle-central');
 
     // Déclaration des variables audio
-    var metronome1 = new Audio('/son/Metronome1.mp3');
+    var metronome1 = new Audio('/son/metronome1.mp3');
     var metronome234 = new Audio('/son/metronome234.mp3');
 
     let isPlaying = false;
