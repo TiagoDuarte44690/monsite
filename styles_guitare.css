@@ -1,7 +1,7 @@
 /* Conteneur principal */
 .guitare {
     position: fixed;
-    bottom: 100%; /* Fixe le conteneur en bas de la page */
+    bottom: 50%; /* Fixe le conteneur en bas de la page */
     left: 50%; /* Centre horizontalement */
     transform: translateX(-50%); /* Ajuste le centrage pour compenser la largeur */
     width: 95vw; /* Ajustez selon la largeur désirée */
