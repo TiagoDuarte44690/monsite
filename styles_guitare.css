@@ -1,13 +1,12 @@
 /* Conteneur principal */
+/* Conteneur principal */
 .guitare {
     position: fixed;
-    bottom: 50%; /* Fixe le conteneur en bas de la page */
-    left: 50%; /* Centre horizontalement */
-    transform: translateX(-50%); /* Ajuste le centrage pour compenser la largeur */
+    bottom: 0; /* Fixe le conteneur en bas de la page */
+    left: 50%; /* Positionne le conteneur à 50% de la largeur de la page */
+    transform: translateX(-50%); /* Centre le conteneur horizontalement */
     width: 95vw; /* Ajustez selon la largeur désirée */
     height: 300px; /* Ajustez la hauteur selon les besoins */
-    margin: 0 auto;
-    align-items: center;
 }
 
 /* Le manche */
