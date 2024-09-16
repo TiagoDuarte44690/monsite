@@ -2,6 +2,7 @@
 .manche {
     position: relative;
     display: flex;
+    bottom: 100%;
     width: 95vw;
     height: 300px;
     background-color: #725c24;
