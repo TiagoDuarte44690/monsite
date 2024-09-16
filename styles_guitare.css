@@ -2,8 +2,8 @@
 .manche {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    width: 95vw;
     height: 300px;
     background-color: #725c24;
     border-radius: 20px;
