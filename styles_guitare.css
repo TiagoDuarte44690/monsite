@@ -2,7 +2,7 @@
 /* Conteneur principal */
 .guitare {
     position: fixed;
-    top: 50px;
+    top: 50%;
     width: 95vw;
     /* Ajustez selon la largeur désirée */
     height: 300px;
