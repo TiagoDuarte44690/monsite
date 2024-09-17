@@ -1,0 +1,50 @@
+/* Tableau des Intervalles et Notes */
+table {
+    font-size: 15px;
+    border-collapse: collapse;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #725c24;
+    z-index: 4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Entête du tableau */
+caption {
+    font-size: 20px;
+    background-color: #725c24;
+    color: black;
+    border: 3px solid #ffe600;
+    text-align: center;
+    z-index: 5;
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+}
+
+/* Intérieur des cellules du tableau */
+th,
+td {
+    border: 3px solid #ffe600;
+    padding: 0 16px;
+    text-align: center;
+    z-index: 5;
+}
+
+/* Menu déroulant */
+#scale-selector {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background-color: #725c24;
+    border: 2px solid #ffe600;
+    padding: 5px;
+    font-size: 16px;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
