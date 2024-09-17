@@ -2,23 +2,6 @@ const maxCases = 18;
 const incrementCases = (106 / maxCases);
 const casesPositions = Array.from({ length: maxCases }, (_, i) => i * incrementCases);
 
-function genererTableauNotes(cordes, notes) {
-    const tableauNotes = [];
-
-    cordes.forEach(corde => {
-        let indexDepart = notes.indexOf(corde);
-        const notesSuivantes = [];
-
-        for (let i = 0; i < maxCases; i++) {
-            notesSuivantes.push(notes[(indexDepart + i + 1) % notes.length]);
-        }
-
-        tableauNotes.push(notesSuivantes);
-    });
-
-    return tableauNotes;
-}
-
 function generateFrettes() {
     const frettesContainer = document.querySelector('.frettes');
 
@@ -47,7 +30,6 @@ function generateFrettes() {
     });
 }
 
-
 function generateCordes() {
     const mancheContainer = document.querySelector('.manche');
     const cordesContainer = document.querySelector('.cordes');
@@ -64,7 +46,6 @@ function generateCordes() {
         cordesContainer.appendChild(cordeDiv);
     });
 }
-
 
 function generateVoyants() {
     const cordesContainer = document.querySelector('.cordes');
@@ -89,48 +70,6 @@ function generateVoyants() {
     });
 }
 
-function updateTableForScale(scale) {
-    if (scale === "default") {
-        intervallesGardes = intervals;
-        notesGardes = notes;
-    } else if (gammes[scale]) {
-        intervallesGardes = gammes[scale];
-        notesGardes = notes.filter((note, index) => {
-            const intervalIndex = index % intervals.length;
-            return intervallesGardes.includes(intervals[intervalIndex]);
-        });
-    } else if (triades[scale]) {
-        intervallesGardes = triades[scale];
-        notesGardes = notes.filter((note, index) => {
-            const intervalIndex = index % intervals.length;
-            return intervallesGardes.includes(intervals[intervalIndex]);
-        });
-    }
-
-    generateTable(intervallesGardes, notesGardes);
-    updateVoyants(notesGardes);
-}
-
-function generateTable(intervals, notes) {
-    const intervalsRow = document.getElementById('intervals-row');
-    const notesRow = document.getElementById('notes-row');
-
-    intervalsRow.innerHTML = '';
-    notesRow.innerHTML = '';
-
-    intervals.forEach(interval => {
-        const intervalCell = document.createElement('td');
-        intervalCell.textContent = interval;
-        intervalsRow.appendChild(intervalCell);
-    });
-
-    notes.forEach(note => {
-        const noteCell = document.createElement('td');
-        noteCell.textContent = note;
-        notesRow.appendChild(noteCell);
-    });
-}
-
 function updateVoyants(notesGardes) {
     document.querySelectorAll('.voyant').forEach(voyant => {
         if (notesGardes.includes(voyant.textContent)) {
@@ -152,12 +91,9 @@ function handleVoyantClick() {
 }
 
 document.getElementById('scale-selector').addEventListener('change', (e) => {
-    updateTableForScale(e.target.value);
     updateVoyants(notesGardes);
 });
 
 generateFrettes();
 generateCordes();
 generateVoyants();
-generateTable(intervals, notes);
-updateTableForScale();
