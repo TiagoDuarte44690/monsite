@@ -1,6 +1,6 @@
 
 .version-container {
-    position: relative;
+    position: absolute;
     left: 50%;
     margin: 0;
     width: 10px;
