@@ -1,31 +1,27 @@
-.version-container {
-    position: absolute;
+.version {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
     left: 50%;
+    
+}
+
+
+.version-bandeau {
+    position: relative; 
+    width: 40vw;
     background-color: #725c24;
-    border-radius: 0 0 200px 200px;
+    border-radius: 0 0 20px 20px;
     padding: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 18px;
     font-weight: bold;
-}
-
-/*
-.version-container {
-    position: relative; 
-    width: 40vw;
-    height: 2vw;
-    top: 0; 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
     
    
 }
 
-.version-container::before {
+.version-bandeau::before {
     content: "Version 1.0.4";
 }
-
-*/
