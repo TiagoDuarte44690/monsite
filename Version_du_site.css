@@ -1,7 +1,7 @@
-
 .version-container {
     position: absolute;
     left: 50%;
+    translate: (50%, 0%);
     width: 20%;
     background-color: #725c24;
     border-radius: 0 0 20px 20px;
