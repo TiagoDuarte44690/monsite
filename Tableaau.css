@@ -1,4 +1,4 @@
-/* Tableau des Intervalles et Notes */
+/* Global table styles */
 table {
     font-size: 15px;
     border-collapse: collapse;
@@ -12,7 +12,7 @@ table {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Entête du tableau */
+/* Table caption styles (header) */
 caption {
     font-size: 20px;
     background-color: #725c24;
@@ -24,7 +24,7 @@ caption {
     padding: 10px;
 }
 
-/* Intérieur des cellules du tableau */
+/* Table cell styles */
 th,
 td {
     border: 3px solid #ffe600;
@@ -33,7 +33,7 @@ td {
     z-index: 5;
 }
 
-/* Menu déroulant */
+/* Dropdown menu (scale selector) */
 #scale-selector {
     position: fixed;
     top: 5%;
