@@ -1,13 +1,14 @@
 /* Cadre pour la version */
 .version-container {
     position: relative; /* Relative ou absolute selon tes besoins */
-    width: 70vw;
+    width: 50vw;
     margin: 0 auto; /* Centre l'élément horizontalement */
     top: 0; /* Aligne l'élément en haut du parent */
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    /*
     background-color: #725c24;
     border-radius: 0 0 20px 20px;
     padding: 10px;
@@ -15,8 +16,9 @@
     color: #fff;
     font-size: 18px;
     font-weight: bold;
+    */
 }
 
 .version-container::before {
-    content: "Version 1.0.3";
+    content: "Version 1.0.4";
 }
