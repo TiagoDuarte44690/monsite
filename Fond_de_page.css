@@ -6,4 +6,8 @@ body {
     background-color: #cda54e;
     box-sizing: border-box;
     overflow: hidden;
+
+    flex-direction: row;
+    justify-content: center;
+    text-align: center; 
 }
