@@ -3,7 +3,6 @@
     position: relative; /* Relative ou absolute selon tes besoins */
     width: 40vw;
     height: 2vw;
-    margin: 10% auto; /* Centre l'élément horizontalement */
     top: 0; /* Aligne l'élément en haut du parent */
     display: flex;
     flex-direction: row;
