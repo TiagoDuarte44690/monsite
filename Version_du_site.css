@@ -5,6 +5,9 @@
     align-items: center;
     height: 100vh;
     margin: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #725c24;
 }
 
 /*
