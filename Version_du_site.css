@@ -2,6 +2,7 @@
 .version-container {
     position: relative; /* Relative ou absolute selon tes besoins */
     width: 50vw;
+    height: 5vw;
     margin: 0 auto; /* Centre l'élément horizontalement */
     top: 0; /* Aligne l'élément en haut du parent */
     display: flex;
