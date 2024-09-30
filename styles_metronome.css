@@ -25,7 +25,7 @@
     /* Garde le curseur en croix sur le cadran */
     z-index: 7;
     /* Assurez-vous que l'aiguille ou autres éléments importants sont au-dessus */
-    border: 2px solid #00f044;
+    border: 2px solid #060737;
     /* Violet profond */
     background: conic-gradient(from -140deg,
             #cecbc3 120deg,
@@ -64,7 +64,7 @@
     top: -50%;
     width: 2px;
     height: 100%;
-    background: #00f044;
+    background: #ffffff;
     /* Violet foncé pour l'aiguille */
     transform-origin: bottom center;
     transform: rotate(0deg);
@@ -101,7 +101,7 @@
 }
 
 .btn {
-    background-color: #725c24;
+    background-color: #2b2c55;
     /* Ton rose vif */
     font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
