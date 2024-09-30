@@ -1,53 +1,41 @@
-const tableau = document.getElementById('tableau');
-const ligneIntervalle = document.createElement('div');
-const ligneNotes = document.createElement('div');
-const cellule = document.createElement('div');
-const cell = document.createElement('div');
-const intervalle = ['Cellule 1', 'Cellule 2', 'Cellule 3', 'Cellule 4', 'Cellule 5', 'Cellule 6'];
-const notes = ['Note 1', 'Note 2', 'Note 3', 'Note 4', 'Note 5', 'Note 6'];
-
-
-
-function majTableau(intervalle, notes) {
-    
-    
-    // Effacer le contenu actuel du tableau
-    tableau.innerHTML = '';
-
-    // Créer la ligne pour les intervalles
-    
-    ligneIntervalle.className = 'Ligne';
-    ligneIntervalle.appendChild(createCell('Intervalle', 'EnteteIntervalle')); // Ajouter l'en-tête Intervalle
-
-    intervalle.forEach(item => {
-        const cellule = document.createElement('div');
-        cellule.textContent = item || '';
-        ligneIntervalle.appendChild(cellule);
-    });
-    tableau.appendChild(ligneIntervalle);
-
-    // Créer la ligne pour les notes
-    
-    ligneNotes.className = 'Ligne';
-    ligneNotes.appendChild(createCell('Notes', 'EnteteNotes')); // Ajouter l'en-tête Notes
-
-    notes.forEach(item => {
-        
-        cellule.textContent = item || '';
-        ligneNotes.appendChild(cellule);
-    });
-    tableau.appendChild(ligneNotes);
-}
-
-function createCell(text, className) {
-    
-    cell.textContent = text;
-    cell.className = className;
-    return cell;
-}
-
-// Exemple d'utilisation
 document.addEventListener("DOMContentLoaded", function() {
-   
-    majTableau(intervalle, notes);
+    // Intervales and Notes data
+    const intervalesData = [
+        "Liste intervales[1]",
+        "Liste intervales[2]",
+        "Liste intervales[3]",
+        "Liste intervales[4]",
+        "Liste intervales[5]",
+        "Liste intervales[6]",
+        "Liste intervales[7]"
+    ];
+
+    const notesData = [
+        "Liste notes[1]",
+        "Liste notes[2]",
+        "Liste notes[3]",
+        "Liste notes[4]",
+        "Liste notes[5]",
+        "Liste notes[6]",
+        "Liste notes[7]"
+    ];
+
+    // Get the table body
+    const tableBody = document.querySelector("#dynamicTable tbody");
+
+    // Populate the "Intervales" row
+    const intervalesRow = tableBody.insertRow(0);
+    intervalesRow.insertCell(0).innerHTML = "Intervales";
+    intervalesData.forEach((intervale, index) => {
+        const cell = intervalesRow.insertCell(index + 1);
+        cell.innerHTML = intervale;
+    });
+
+    // Populate the "Notes" row
+    const notesRow = tableBody.insertRow(1);
+    notesRow.insertCell(0).innerHTML = "Notes";
+    notesData.forEach((note, index) => {
+        const cell = notesRow.insertCell(index + 1);
+        cell.innerHTML = note;
+    });
 });

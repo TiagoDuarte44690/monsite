@@ -1,33 +1,40 @@
-.Tableau {
-    position: absolute;
-    top: 10%;
-    width: 60%;
-    border-collapse: collapse; /* Pas nécessaire avec flexbox, mais utile pour les tables */
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
-.EntetePrincipal {
-    background-color: #2b2c55;
-    color: #ffffff;
-    text-align: center;
-    padding: 1%;
+table {
     width: 100%;
-    box-sizing: border-box;
-    font-weight: bold;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.Entete, .Ligne {
-    display: flex;
-    width: 100%;
-}
-
-.Entete > div, .Ligne > div {
-   width: (100% / nombre cellule);
-    padding: 1%;
+thead th {
+    background-color: #f4f4f4;
+    padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
 }
 
-.Entete > div {
-    background-color: #e0e0e0;
-    font-weight: bold;
+tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+th, td {
+    min-width: 100px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
