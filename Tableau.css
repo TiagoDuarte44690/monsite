@@ -2,10 +2,15 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    display: flex;
+    justify-content: center;  /* Center the table horizontally */
+    align-items: center;      /* Center the table vertically */
+    height: 100vh;            /* Make sure the body takes the full viewport height */
+    margin: 0;                /* Remove default margins */
 }
 
 table {
-    width: 50%;
+    width: 25%;               /* Set the table to take up 1/4 of the screen width */
     border-collapse: collapse;
     margin-bottom: 20px;
 }
