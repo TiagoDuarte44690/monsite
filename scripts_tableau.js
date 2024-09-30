@@ -1,25 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Intervales and Notes data
-    const intervalesData = [
-        "Liste intervales[1]",
-        "Liste intervales[5]",
-        "Liste intervales[3]",
-        "Liste intervales[4]",
-        "Liste intervales[5]",
-        "Liste intervales[6]",
-        "Liste intervales[7]"
-    ];
 
-    const notesData = [
-        "Liste notes[1]",
-        "Liste notes[2]",
-        "Liste notes[3]",
-        "Liste notes[4]",
-        "Liste notes[5]",
-        "Liste notes[6]",
-        "Liste notes[7]"
-    ];
-
+    const intervalesData = ['Cellule 1', 'Cellule 2', 'Cellule 3', 'Cellule 4', 'Cellule 5', 'Cellule 6'];
+    const notesData = ['Note 1', 'Note 2', 'Note 3', 'Note 4', 'Note 5', 'Note 6'];
+    
     // Get the table body
     const tableBody = document.querySelector("#dynamicTable tbody");
 
