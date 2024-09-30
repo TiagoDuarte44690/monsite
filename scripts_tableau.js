@@ -1,44 +1,53 @@
-const intervals = ['1', '2m', '2', '3m', '3', '4', '4aug', '5', '6m', '6', '7m', '7'];
-const notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
-const cordes = ['E', 'A', 'D', 'G', 'B', 'E'];
-const maxCases = 18;
-const incrementCases = (106 / maxCases);
-const casesPositions = Array.from({ length: maxCases }, (_, i) => i * incrementCases);
+const tableau = document.getElementById('tableau');
+const ligneIntervalle = document.createElement('div');
+const ligneNotes = document.createElement('div');
+const cellule = document.createElement('div');
+const cell = document.createElement('div');
+const intervalle = ['Cellule 1', 'Cellule 2', 'Cellule 3', 'Cellule 4', 'Cellule 5', 'Cellule 6'];
+const notes = ['Note 1', 'Note 2', 'Note 3', 'Note 4', 'Note 5', 'Note 6'];
 
-// Declaration des gammes et des triades
-const gammes = {
-    modesIonien: ['1', '2', '3', '4', '5', '6', '7'],              //DO --> degre I
-    modesDorien: ['1', '2', '3m', '4', '5', '6', '7m'],            //RE --> degre II
-    modesPhrygien: ['1', '2m', '3m', '4', '5', '6m', '7m'],        //MI --> degre III
-    modesLydien: ['1', '2', '3', '4aug', '5', '6', '7'],           //FA --> degre IV
-    modesMixolydien: ['1', '2', '3', '4', '5', '6', '7m'],         //SOL --> degre V
-    modesEolien: ['1', '2', '3m', '4', '5', '6m', '7m'],           //LA --> degre VI
-    modesLocrien: ['1', '2m', '3m', '4', '4aug', '5', '6m', '7m'], //SI --> degre VII
-    Pentatonique: ['1', '3m', '4', '5', '7m'],
-    Blues: ['1', '3m', '4', '4aug', '5', '7m']
-};
 
-const triades = {
-    Majeure: ['1', '3', '5'],
-    Mineure: ['1', '3m', '5']
-};
 
-let intervallesGardes = intervals;
-let notesGardes = notes;
+function majTableau(intervalle, notes) {
+    
+    
+    // Effacer le contenu actuel du tableau
+    tableau.innerHTML = '';
 
-function genererTableauNotes(cordes, notes) {
-    const tableauNotes = [];
+    // Créer la ligne pour les intervalles
+    
+    ligneIntervalle.className = 'Ligne';
+    ligneIntervalle.appendChild(createCell('Intervalle', 'EnteteIntervalle')); // Ajouter l'en-tête Intervalle
 
-    cordes.forEach(corde => {
-        let indexDepart = notes.indexOf(corde);
-        const notesSuivantes = [];
-
-        for (let i = 0; i < maxCases; i++) {
-            notesSuivantes.push(notes[(indexDepart + i + 1) % notes.length]);
-        }
-
-        tableauNotes.push(notesSuivantes);
+    intervalle.forEach(item => {
+        const cellule = document.createElement('div');
+        cellule.textContent = item || '';
+        ligneIntervalle.appendChild(cellule);
     });
+    tableau.appendChild(ligneIntervalle);
 
-    return tableauNotes;
+    // Créer la ligne pour les notes
+    
+    ligneNotes.className = 'Ligne';
+    ligneNotes.appendChild(createCell('Notes', 'EnteteNotes')); // Ajouter l'en-tête Notes
+
+    notes.forEach(item => {
+        
+        cellule.textContent = item || '';
+        ligneNotes.appendChild(cellule);
+    });
+    tableau.appendChild(ligneNotes);
 }
+
+function createCell(text, className) {
+    
+    cell.textContent = text;
+    cell.className = className;
+    return cell;
+}
+
+// Exemple d'utilisation
+document.addEventListener("DOMContentLoaded", function() {
+   
+    majTableau(intervalle, notes);
+});
