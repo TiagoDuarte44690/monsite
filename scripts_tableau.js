@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Intervales and Notes data
     const intervalesData = [
         "Liste intervales[1]",
-        "Liste intervales[2]",
+        "Liste intervales[5]",
         "Liste intervales[3]",
         "Liste intervales[4]",
         "Liste intervales[5]",
