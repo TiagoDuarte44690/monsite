@@ -12,10 +12,13 @@
     background-color: #241f3b;
     border-radius: 0 0 20px 20px;
     padding: 5px;
-    box-shadow: 0 20px 5px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-size: 18px;
     font-weight: bold;
+
+    display: flex; /* Ajout pour le centrage vertical */
+    align-items: center; /* Centre le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
 }
 
 .version-bandeau::before {
